@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const SignInMainBlock = styled.div`
   width: 80%;
@@ -57,6 +57,7 @@ export const SignInBlockRight = styled.img`
   width: 40%;
   height: 300px;
 `;
+
 
 export const SignUP = styled(Link)`
   text-align: center;

@@ -8,8 +8,10 @@ import {
   TopName,
   StyledSkeletonImg,
   StyledSkeletonName,
+  TopLogout,
 } from "./styles";
 import { API_URL } from "../../constants";
+import { Redirect } from "react-router-dom";
 
 const TopPanel = () => {
   const [user, setUser] = useState();
@@ -24,19 +26,27 @@ const TopPanel = () => {
   }, []);
 
   return (
-    <TopContainer to="/profile">
+    <TopContainer>
       {user?.avatar ? (
         <Avatar src={`${API_URL}/getImage/${user?.avatar}`} />
       ) : (
         <StyledSkeletonImg variant="circular" width={30} height={30} />
       )}
-      <TopName>
+      <TopName to="/profile">
         {user?.username ? (
           user?.username
         ) : (
           <StyledSkeletonName variant="text" width={110} height={40} />
         )}
       </TopName>
+      <TopLogout
+        to="/signin"
+        onClick={(evt) => {
+          axios.post(`${API_URL}/logout`);
+        }}
+      >
+        Выйти
+      </TopLogout>
     </TopContainer>
   );
 };

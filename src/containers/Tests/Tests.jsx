@@ -52,10 +52,10 @@ const Tests = ({ theme }) => {
   };
    const setQuizResultThird = async (obj) => {
      const body = {
-       test_one:
-         obj.numberOfCorrectAnswers >= user.test_one
+       test_third:
+         obj.numberOfCorrectAnswers >= user.test_third
            ? obj.numberOfCorrectAnswers
-           : user.test_one,
+           : user.test_third,
        id: user._id,
      };
 
@@ -64,10 +64,10 @@ const Tests = ({ theme }) => {
 
   const setQuizResultSecond = async (obj) => {
     const body = {
-      test_one:
-        obj.numberOfCorrectAnswers >= user.test_one
+      test_two:
+        obj.numberOfCorrectAnswers >= user.test_two
           ? obj.numberOfCorrectAnswers
-          : user.test_one,
+          : user.test_two,
       id: user._id,
     };
 

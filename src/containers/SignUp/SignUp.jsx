@@ -1,7 +1,7 @@
 import React, { Fragment, useCallback, useState } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 
-import { signIn } from "./utils";
+import { signUp } from "./utils";
 import {
   SignInMainBlock,
   SignInTitle,
@@ -24,14 +24,14 @@ const SignIn = () => {
     evt.preventDefault();
     const formData = Object.fromEntries(new FormData(evt.target));
 
-    signIn({ formData, setUser });
+    signup({ formData, setUser });
   });
 
   return user._id ? (
     <Redirect push to={`/courses`} />
   ) : (
     <Fragment>
-      <SignInTitle>Войти</SignInTitle>
+      <SignInTitle>Зарегистироваться</SignInTitle>
       <SignInMainBlock>
         <SignInForm action={API_URL} method="POST" onSubmit={handleFormSubmit}>
           <SignInLabel htmlFor="username">Логин</SignInLabel>
@@ -54,7 +54,7 @@ const SignIn = () => {
         </SignInForm>
         <SignInBlockRight src={SignInImg} />
       </SignInMainBlock>
-      <SignUP to="/signup">Нет аккаунта? Зарегистрироваться</SignUP>
+      <SignUP to='/signin'>Есть аккаунт? Войти</SignUP>
     </Fragment>
   );
 };
