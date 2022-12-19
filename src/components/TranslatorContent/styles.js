@@ -89,6 +89,7 @@ export const StyledCoursesSortingButton = styled.div`
 export const StyledCourses = styled.ul`
   margin-top: 60px;
   padding: 0;
+  padding-bottom: 50px;
   ${({ view }) => {
     if (view === "grid") {
       return `
@@ -127,7 +128,7 @@ export const StyledCourseCard = styled.li`
 
 export const StyledCoursCardImg = styled.img`
   width: 100%;
-  height: 100%;
+  height: 300px;
   object-fit: contain;
   background-color: ${({ theme }) => theme.cardImgBg};
 

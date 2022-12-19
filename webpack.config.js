@@ -1,5 +1,5 @@
-const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.jsx",
@@ -59,6 +59,6 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
-    port: process.env.PORT || 8001,
+    port: 8001,
   },
 };

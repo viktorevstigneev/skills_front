@@ -21,10 +21,15 @@ const JavaScriptCourse = lazy(() =>
   import("./components/Courses/JavaScriptCourse")
 );
 const CssCourse = lazy(() => import("./components/Courses/CssCourse"));
+const HtmlCourse = lazy(() => import("./components/Courses/HtmlCourse"));
+const BootstrapCourse = lazy(() =>
+  import("./components/Courses/BootstrapCourse")
+);
+const ReactCourse = lazy(() => import("./components/Courses/ReactCourse"));
+const PythonCourse = lazy(() => import("./components/Courses/Python"));
 
 const App = () => {
   const [user, setUser] = useState();
-  console.log("user: APP", user);
 
   useEffect(() => {
     const getCurrentUser = async () => {
@@ -47,11 +52,14 @@ const App = () => {
           <Route path="/books" component={Books} />
           <Route path="/games" component={Games} />
           <Route path="/profile" component={Profile} />
-
           <Route path="/signup" component={SignUp} />
 
           <Route path="/JavaScript" component={JavaScriptCourse} />
           <Route path="/css" component={CssCourse} />
+          <Route path="/html" component={HtmlCourse} />
+          <Route path="/bootstrap" component={BootstrapCourse} />
+          <Route path="/react" component={ReactCourse} />
+          <Route path="/python" component={PythonCourse} />
 
           {user && user._id ? (
             <Redirect from="*" to="/courses" />

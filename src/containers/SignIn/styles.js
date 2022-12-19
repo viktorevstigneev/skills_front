@@ -59,7 +59,9 @@ export const SignInBlockRight = styled.img`
 `;
 
 export const SignUP = styled(Link)`
-  text-align: center;
+  display: block;
+  color: ${({ theme }) => theme.text};
+  text-decoration: none;
   margin-top: 20px;
   font-size: 18px;
 `;

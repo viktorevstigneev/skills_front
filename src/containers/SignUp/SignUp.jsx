@@ -18,13 +18,12 @@ import SignInImg from "../../img/signin.png";
 
 const SignIn = () => {
   const [user, setUser] = useState({});
-  console.log("user: ", user);
 
   const handleFormSubmit = useCallback((evt) => {
     evt.preventDefault();
     const formData = Object.fromEntries(new FormData(evt.target));
 
-    signup({ formData, setUser });
+    signUp({ formData, setUser });
   });
 
   return user._id ? (
@@ -51,10 +50,12 @@ const SignIn = () => {
             required={true}
           />
           <SignInButton type="submit">отправить</SignInButton>
+
+          <SignUP to='/signin'>Есть аккаунт? Войти</SignUP>
         </SignInForm>
         <SignInBlockRight src={SignInImg} />
       </SignInMainBlock>
-      <SignUP to='/signin'>Есть аккаунт? Войти</SignUP>
+      
     </Fragment>
   );
 };

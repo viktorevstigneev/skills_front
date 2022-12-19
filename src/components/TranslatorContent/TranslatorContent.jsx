@@ -29,7 +29,6 @@ const TranslatorContent = ({
 	const [searchValue, setSearchValue] = useState('');
 	const [view, setView] = useState("grid");
   const [quickSort, setQuickSort] = useState("all");
-  console.log('quickSort: ', quickSort);
 
 	const handleSearhChange = (evt) => {
     setSearchValue(evt.target.value);

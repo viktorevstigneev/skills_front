@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Skeleton } from "@mui/material";
 import { useState } from "react";
+import axios from "axios";
 import Quiz from "react-quiz-component";
 
 
@@ -17,9 +18,21 @@ import TopPanel from "../../components/TopPanel";
 import Header from "../../components/Header";
 
 import { quiz_one, quiz_second,quiz_third } from "./data";
+import { API_URL } from "../../constants";
+
 
 const Tests = ({ theme }) => {
-  // const [active, setActive] = useState(TESTS_ARRAY[0]?.Test);
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+  const getCurrentUser = async () => {
+    const responseData = await axios
+      .get(`${API_URL}/profile`, { withCredentials: true })
+      .then((response) => setUser(response.data));
+  };
+  getCurrentUser();
+}, []);
+
 
   const renderCustomResultPageOne = (obj) => (
     <div>

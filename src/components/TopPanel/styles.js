@@ -8,6 +8,7 @@ export const TopContainer = styled.div`
   display: flex;
   align-items: center;
   text-decoration: none;
+  padding: 20px 0;
 `;
 
 export const TopLogout = styled(Link)`
@@ -16,10 +17,11 @@ export const TopLogout = styled(Link)`
   text-decoration: none;
   padding: 5px;
   transition: 0.5s;
+  border-radius: 5px;
 
   &:hover {
-    background: ${({ theme }) => theme.skeleton};
-    color: ${({ theme }) => theme.skeleton};
+    background: #6c5dd3;
+    color: ${({ theme }) => theme.text};
   }
 `;
 

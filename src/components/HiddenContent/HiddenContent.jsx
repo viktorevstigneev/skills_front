@@ -6,6 +6,7 @@ import {
   CourseTabContent,
   CourseTabName,
   CourseShowBtn,
+  CourseTabTaskContent,
 } from "./styles";
 
 const HiddenContent = ({ tabData, inx }) => {
@@ -18,13 +19,18 @@ const HiddenContent = ({ tabData, inx }) => {
   return (
     <CourseTabItem>
       <CourseTabHeader onClick={handleTaskOpenButtonClick}>
-        <CourseTabName>{inx}. {tabData.title}</CourseTabName>
+        <CourseTabName>
+          {inx}. {tabData.title}
+        </CourseTabName>
         <CourseShowBtn>
           {isDescriptionShowed ? <>&#9660;</> : <>&#9668;</>}
         </CourseShowBtn>
       </CourseTabHeader>
       {isDescriptionShowed && (
-        <CourseTabContent>{tabData.description}</CourseTabContent>
+        <>
+          <CourseTabContent>{tabData?.description}</CourseTabContent>
+          <CourseTabTaskContent>{tabData?.task}</CourseTabTaskContent>
+        </>
       )}
     </CourseTabItem>
   );

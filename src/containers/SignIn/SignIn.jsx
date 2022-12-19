@@ -51,10 +51,12 @@ const SignIn = () => {
             required={true}
           />
           <SignInButton type="submit">отправить</SignInButton>
+          
+          <SignUP to="/signup">Нет аккаунта? Зарегистрироваться</SignUP>
         </SignInForm>
         <SignInBlockRight src={SignInImg} />
       </SignInMainBlock>
-      <SignUP to="/signup">Нет аккаунта? Зарегистрироваться</SignUP>
+      
     </Fragment>
   );
 };
